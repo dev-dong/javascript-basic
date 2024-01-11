@@ -63,4 +63,6 @@ console.log(item);
 // 객체의 나머지 연산자
 const {name, ...rest} = item; // name을 제외한 나머지 속성들을 rest에 할당한다.
 console.log(rest);
-console.log({...item}) // Symbol은 복사되지 않는다. Symbol은 열거 불가능한 속성이기 때문이다.
+
+const copiedItem = {...item};
+console.log(copiedItem) // Symbol은 복사되지 않는다. Symbol은 열거 불가능한 속성이기 때문이다.
