@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "prepare": "husky install"
+  },
   "dependencies": {
     "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "husky": "^9.0.6"
   }
 }
