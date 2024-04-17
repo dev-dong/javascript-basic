@@ -69,3 +69,54 @@ const item5 = number5.splice(1, 0, 'a', 'b')
 console.log({item5})
 console.log({number5})
 console.log(number5.splice(1)) // splice 메서드가 반환하는건 삭제된 배열의 아이템이다
+
+// slice 배열 자르기
+const numbers6 = [1, 2, 3, 4]
+const subNumbers = numbers6.slice(1, 3) // 1부터 3까지 자르기, 3은 포함하지 않는다. [start, end) 새로운 배열이 반환한다. 원본X
+console.log(subNumbers)
+const sub2 = numbers6.slice(1) // 1부터 끝까지 자르기
+console.log(sub2)
+const sub3 = numbers6.slice() // 배열 전체 얕은 복사
+console.log(sub3)
+
+// 얕은 복사
+// primitive 값은 원본에 영향을 주지 않지만, 객체나 배열은 참조 포인터만 복사하기 때문에 원본에 영향을 준다.
+const items2 = [1, {
+    name: 'DongHo'
+}]
+
+const newItems = items2.slice()
+console.log(items2)
+console.log(newItems)
+newItems[0] = 10
+newItems[1].name = 'Max'
+console.log(items2)
+console.log(newItems)
+
+// 배열 구조 분해
+// 객체의 구조 분해와 차이점은 객체는 {}를 사용하며, 배열은 []를 사용한다.
+const [one, two, three, four] = [1, 2, 3, 4]
+console.log({one, two, three, four})
+
+// 나머지 연산자는 항상 마지막에 위치해야 한다.
+const [head, ...rest] = [1, 2, 3, 4]
+console.log({head, rest})
+
+const matrix = [
+    [1, 2],
+    [3, 4]
+]
+const [[a, b], [c, d]] = matrix
+console.log({a, b, c, d})
+
+// 필요한것만 추출해서 사용할 수 있다.
+const [[aa]] = matrix;
+console.log({aa})
+
+const users = [
+    {name: 'DongHo', age: 20},
+    {name: 'Max', age: 30}
+]
+const [{name}, {age}] = users
+console.log({name})
+console.log({age})
